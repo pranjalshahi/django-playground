@@ -1,4 +1,4 @@
 import requests
-r = requests.get("https://api.github.com/users/pranjalshahi").json()
+r = requests.get("https://api.github.com/users/pranjalshahi")
 r.raise_for_status()
-print(r.get("login"), "   ", r.get("organizations_url"))
+print(r.json().get("login"), "   ", r.json().get("organizations_url"))
